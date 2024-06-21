@@ -1,13 +1,9 @@
-
-import { useState } from 'react';
-import CheckboxForm from './CheckboxForm';
-import Chevrons from './Chevrons';
+import { useState } from "react";
+import CheckboxForm from "./CheckboxForm";
+import Chevrons from "./Chevrons";
 
 function App() {
-  const [checkboxes, setCheckboxes] = useState([
-    { id: 1, checked: false },
-    { id: 2, checked: false },
-  ]);
+  const [checkboxes, setCheckboxes] = useState([{ id: 1, checked: false }]);
 
   const handleChange = (id) => {
     setCheckboxes((checkboxes) => {
@@ -26,17 +22,17 @@ function App() {
     });
   };
 
-  const chevrons = checkboxes.filter((checkbox) => checkbox.checked)
+  const chevrons = checkboxes.filter((checkbox) => checkbox.checked);
 
   return (
     <>
-    <h1 className="text-center">Chevron chart form</h1>
-    <div className="checkbox-form container">
-     <CheckboxForm checkboxes ={checkboxes} handleChange={handleChange}/>
-    </div>
-    <div className="d-flex flex-sm-row flex-column">
-      <Chevrons chevrons={chevrons}/>
-    </div>
+      <h1 className="text-center">Chevron chart form</h1>
+      <div className="mb-4 d-flex flex-column justify-content-center align-items-center pb-4">
+        <CheckboxForm checkboxes={checkboxes} handleChange={handleChange} />
+      </div>
+      <div className="d-flex flex-sm-row flex-column">
+        <Chevrons chevrons={chevrons} />
+      </div>
     </>
   );
 }

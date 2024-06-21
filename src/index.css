@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.chevron {
+  --s: 80%;
+
+  height: 220px;
+  aspect-ratio: 3/5;
+  clip-path: polygon(0 0,var(--s) 0,100% 50%,var(--s) 100%,0 100%,calc(100% - var(--s)) 50%);
+  background: #133234;
+}
+
+@media (max-width: 576px){
+  .chevron {
+    transform: rotate(-90deg);
+  }
+}
